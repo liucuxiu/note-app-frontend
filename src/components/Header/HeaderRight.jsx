@@ -1,7 +1,7 @@
-const HeaderRight = () => {
+const HeaderRight = ({ onAddNote }) => {
   return (
     <div className="header-right">
-      Header Right
+      <button onClick={onAddNote}>add note</button>
     </div>
   )
 }
