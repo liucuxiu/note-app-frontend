@@ -1,80 +1,19 @@
 import NoteItem from './NoteItem/NoteItem';
 
-const DUMMNY_NOTES = [
-  {
-    id: 1,
-    title: "today",
-    content: "I am thinking of",
-    createdAt: "12/2/2002"
-  },
-  {
-    id: 2,
-    title: "today",
-    content: "I am thinking of",
-    createdAt: "12/2/2002"
-  },
-  {
-    id: 3,
-    title: "today",
-    content: "I am thinking of",
-    createdAt: "12/2/2002"
-  },
-  {
-    id: 4,
-    title: "today",
-    content: "I am thinking of",
-    createdAt: "12/2/2002"
-  },
-  {
-    id: 5,
-    title: "today",
-    content: "I am thinking of",
-    createdAt: "12/2/2002"
-  },
-  {
-    id: 1,
-    title: "today",
-    content: "I am thinking of",
-    createdAt: "12/2/2002"
-  },
-  {
-    id: 2,
-    title: "today",
-    content: "I am thinking of",
-    createdAt: "12/2/2002"
-  },
-  {
-    id: 3,
-    title: "today",
-    content: "I am thinking of",
-    createdAt: "12/2/2002"
-  },
-  {
-    id: 4,
-    title: "today",
-    content: "I am thinking of",
-    createdAt: "12/2/2002"
-  },
-  {
-    id: 5,
-    title: "today",
-    content: "I am thinking of",
-    createdAt: "12/2/2002"
-  }
-]
-
-const SideBar = () => {
-  const notesList = DUMMNY_NOTES.map(note =>
+const SideBar = ({ notes, handleSelectNote, selectedNote }) => {
+  const notesList = notes.map(note =>
     <NoteItem key={note.id}
-              id={note.id}
-              title={note.title}/>
+              note={note}
+              handleSelectNote={handleSelectNote}
+              selectedNote={selectedNote}
+    />
   )
   return (
     <>
       <aside className="sidebar">
-        <ul>
+        <div className="app-sidebar-notes">
           {notesList}
-        </ul>
+        </div>
       </aside>
     </>
 

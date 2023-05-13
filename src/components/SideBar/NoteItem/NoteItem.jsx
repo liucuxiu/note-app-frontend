@@ -1,11 +1,14 @@
-const NoteItem = () => {
+const NoteItem = ({ note , selectedNote, handleSelectNote}) => {
   return (
-    <li>
-      <div>
-        <h3>Title</h3>
-        <divv>Content</divv>
+      <div
+        onClick={() => handleSelectNote(note)}
+        className={`app-sidebar-note ${note === selectedNote && "active"}`}>
+        <h3>{note.title}</h3>
+
+        <p>{note.content}</p>
+
+        <small>13/04/2022</small>
       </div>
-    </li>
   )
 }
 
