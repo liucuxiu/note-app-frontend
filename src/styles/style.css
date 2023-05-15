@@ -72,6 +72,7 @@
 .add-note-icon {
     padding-left: 45px;
 }
+
 .add-note-icon:hover {
     color: #f8be00;
 }
@@ -149,4 +150,61 @@ textarea {
 .app-main-note-edit input {
     height: 50px;
     font-size: 2rem;
+}
+
+
+/* login page */
+.login-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-form {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #ccc;
+}
+
+.login-form h2 {
+    text-align: center;
+    margin-top: 0;
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.login-form button {
+    background-color: #cea106;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.login-form button:hover {
+    background-color: #fee490;
+}
+
+.login-form .error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
 }
