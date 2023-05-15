@@ -31,7 +31,7 @@ export async function fetchNoteById(id) {
   }
 }
 
-export async function saveNote(note) {
+export async function createNote(note) {
   try {
     const res = await fetch(`${BASE_URL}/notes`, {
       method: 'POST',

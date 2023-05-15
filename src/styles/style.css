@@ -65,9 +65,15 @@
     font-size: x-large;
 }
 
+.delete-note-icon:hover {
+    color: #f8be00;
+}
 
 .add-note-icon {
     padding-left: 45px;
+}
+.add-note-icon:hover {
+    color: #f8be00;
 }
 
 .app-sidebar-notes {

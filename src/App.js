@@ -46,7 +46,7 @@ function App() {
   };
 
   const onAddNote = async () => {
-    const newNote = await NoteAPI.saveNote({
+    const newNote = await NoteAPI.createNote({
       title: 'untitled',
       content: 'untitled'
     });
