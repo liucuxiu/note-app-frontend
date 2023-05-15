@@ -4,7 +4,6 @@ import { useState } from 'react';
 const Content = ({ selectedNote, onUpdateNote }) => {
   const [createdTimeShow, setCreatedTimeShow] = useState(false)
   const handleChangeTime = () => {
-    console.log('handleChangeTime')
     setCreatedTimeShow(!createdTimeShow)
   }
 
