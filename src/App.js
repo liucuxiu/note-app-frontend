@@ -11,62 +11,37 @@ function App() {
         id: 1,
         title: "today",
         content: "I am thinking of",
-        createdAt: "12/2/2002"
+        createdAt: "12/2/2002",
+        updatedAt: "12/2/2002"
       },
       {
         id: 2,
         title: "today1 ",
         content: "I am thinking ofm",
-        createdAt: "12/2/2002"
+        createdAt: "12/2/2002",
+        updatedAt: "12/2/2002"
       },
       {
         id: 3,
         title: "today2",
         content: "I am thinking abc2",
-        createdAt: "12/2/2002"
+        createdAt: "12/2/2002",
+        updatedAt: "12/2/2002"
       },
       {
         id: 4,
         title: "today",
         content: "I am thinking of",
-        createdAt: "12/2/2002"
-      },
-      {
-        id: 5,
-        title: "today",
-        content: "I am thinking of",
-        createdAt: "12/2/2002"
-      },
-      {
-        id: 6,
-        title: "today",
-        content: "I am thinking of",
-        createdAt: "12/2/2002"
-      },
-      {
-        id: 7,
-        title: "today",
-        content: "I am thinking of",
-        createdAt: "12/2/2002"
+        createdAt: "12/2/2002",
+        updatedAt: "12/2/2002"
       },
       {
         id: 8,
         title: "today",
         content: "I am thinking of",
-        createdAt: "12/2/2002"
+        createdAt: "12/2/2002",
+        updatedAt: "12/2/2002"
       },
-      {
-        id: 9,
-        title: "today",
-        content: "I am thinking of",
-        createdAt: "12/2/2002"
-      },
-      {
-        id: 10,
-        title: "today",
-        content: "I am thinking of",
-        createdAt: "12/2/2002"
-      }
     ]
 
   )
@@ -95,6 +70,7 @@ function App() {
       return note;
     });
     console.log(updatedNotesArr)
+    setSelectedNote(updatedNote)
     setNotes(updatedNotesArr);
   }
   const getSelectedNote = () => {

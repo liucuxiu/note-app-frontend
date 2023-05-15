@@ -1,9 +1,10 @@
+import { BsTrash3 } from "react-icons/bs";
+
 const HeaderLeft = () => {
 
   return (
     <div className="header-left">
-      Header Left
-      <button>Delete note</button>
+      <BsTrash3/>
     </div>
   )
 }

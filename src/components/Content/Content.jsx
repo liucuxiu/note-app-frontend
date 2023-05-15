@@ -2,17 +2,20 @@ const Content = ({ selectedNote, onUpdateNote }) => {
   const onEditField = (field, value) => {
     onUpdateNote({
       ...selectedNote,
-      [field]: value,
-      lastUpdatedAt: Date.now()
+      [field]: value
     });
   };
   if (!selectedNote) {
-    return <div className="content">No active note</div>;
+    return <div className="content">
+    </div>;
   }
 
   return (
     <>
       <main className="content">
+        <div className="app-main-updated">
+          <small>{selectedNote.updatedAt}</small>
+        </div>
         <div className="app-main-note-edit">
           <textarea
             id="content"

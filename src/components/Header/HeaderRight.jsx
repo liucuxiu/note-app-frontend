@@ -1,9 +1,13 @@
+import { BsPencilSquare } from 'react-icons/bs';
+
 const HeaderRight = ({ onAddNote }) => {
   return (
     <div className="header-right">
-      <button onClick={onAddNote}>add note</button>
+      <BsPencilSquare
+        className="add-note-icon"
+        onClick={onAddNote}/>
     </div>
-  )
-}
+  );
+};
 
-export default HeaderRight
+export default HeaderRight;
