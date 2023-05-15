@@ -10,7 +10,8 @@ export async function fetchNotes() {
       },
     });
     return await res.json();
-  } catch (e) {
+  }
+  catch (e) {
     console.log(e);
   }
 }
@@ -24,7 +25,8 @@ export async function fetchNoteById(id) {
       },
     });
     return await res.json();
-  } catch (e) {
+  }
+  catch (e) {
     console.log(e);
   }
 }
@@ -63,7 +65,8 @@ export async function updateNoteById(note) {
       }),
     });
     return await res.json();
-  } catch (e) {
+  }
+  catch (e) {
     console.log(e);
   }
 }
@@ -78,7 +81,8 @@ export async function deleteNoteById(id) {
       },
     });
     return await res.json();
-  } catch (e) {
+  }
+  catch (e) {
     console.log(e);
   }
 }

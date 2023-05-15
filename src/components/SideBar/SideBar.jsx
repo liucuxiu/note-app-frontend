@@ -17,7 +17,7 @@ const SideBar = ({ notes, handleSelectNote, selectedNote }) => {
               handleSelectNote={handleSelectNote}
               selectedNote={selectedNote}
     />
-  )
+  );
   return (
     <>
       <aside className="sidebar">

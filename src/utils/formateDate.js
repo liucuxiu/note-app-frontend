@@ -30,16 +30,17 @@ export function displayDate(dateString) {
   const weekStart = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate() - currentDate.getDay());
   const weekEnd = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate() + (6 - currentDate.getDay()));
 
-  if  (date.getDate() === currentDate.getDate()
+  if (date.getDate() === currentDate.getDate()
     && date.getMonth() === currentDate.getMonth()
-    && date.getFullYear() === currentDate.getFullYear()){
+    && date.getFullYear() === currentDate.getFullYear()) {
     return formatTime(dateString);
   }
   else if (date >= weekStart && date <= weekEnd) {
     const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     const day = days[date.getDay()];
     return `${day}`;
-  } else {
+  }
+  else {
     const fullDate = date.toLocaleDateString('en-GB');
     return `${fullDate}`;
   }

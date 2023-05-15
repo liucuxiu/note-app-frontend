@@ -2,10 +2,10 @@ import { formatDate } from '../../utils/formateDate';
 import { useState } from 'react';
 
 const Content = ({ selectedNote, onUpdateNote }) => {
-  const [createdTimeShow, setCreatedTimeShow] = useState(false)
+  const [createdTimeShow, setCreatedTimeShow] = useState(false);
   const handleChangeTime = () => {
-    setCreatedTimeShow(!createdTimeShow)
-  }
+    setCreatedTimeShow(!createdTimeShow);
+  };
 
   const onEditField = (field, value) => {
     onUpdateNote({
@@ -21,8 +21,8 @@ const Content = ({ selectedNote, onUpdateNote }) => {
     <>
       <main className="content">
         <div className="app-main-updated">
-          {createdTimeShow && <small onClick={handleChangeTime}>Created: {formatDate(selectedNote.createdAt)}</small> }
-          {!createdTimeShow && <small onClick={handleChangeTime}>Edited: {formatDate(selectedNote.updatedAt)}</small> }
+          {createdTimeShow && <small onClick={handleChangeTime}>Created: {formatDate(selectedNote.createdAt)}</small>}
+          {!createdTimeShow && <small onClick={handleChangeTime}>Edited: {formatDate(selectedNote.updatedAt)}</small>}
         </div>
         <div className="app-main-note-edit">
           <input

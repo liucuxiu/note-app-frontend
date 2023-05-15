@@ -18,6 +18,14 @@ function App() {
     fetchNotes().catch(console.error);
   }, []);
 
+  useEffect(() => {
+    const autoSaveTimer = setTimeout(() => {
+      saveNote(selectedNote);
+    }, 5000); // Auto-save every 5 seconds
+
+    return () => clearTimeout(autoSaveTimer);
+  }, [selectedNote]);
+
   const fetchNotes = async () => {
     try {
       const data = await NoteAPI.fetchNotes();
@@ -44,14 +52,6 @@ function App() {
     setNotes([newNote, ...notes]);
     setSelectedNote(newNote);
   };
-
-  useEffect(() => {
-    const autoSaveTimer = setTimeout(() => {
-      saveNote(selectedNote);
-    }, 5000); // Auto-save every 5 seconds
-
-    return () => clearTimeout(autoSaveTimer);
-  }, [selectedNote]);
 
   const saveNote = async (note) => {
     if (!note || Object.keys(note).length === 0) return;
