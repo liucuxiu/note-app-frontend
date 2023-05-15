@@ -1,4 +1,4 @@
-import { displayDate } from '../../../utils/formateDate';
+import { displayDate } from '../../utils/formateDate';
 
 const NoteItem = ({ note, selectedNote, handleSelectNote }) => {
   return (

@@ -1,18 +1,23 @@
+import { getToken } from '../utils/getToken';
+
 const BASE_URL = process.env.REACT_APP_API_URL;
-const AUTH_TOKEN = process.env.REACT_APP_AUTH_TOKEN;
 
 export async function fetchNotes() {
+
   try {
     const res = await fetch(`${BASE_URL}/notes`, {
       headers: {
         'Content-Type': 'application/json',
-        Authorization: AUTH_TOKEN,
+        Authorization: getToken(),
       },
     });
+    if (res.status === 403) {
+      throw new Error('Unauthorized');
+    }
     return await res.json();
   }
   catch (e) {
-    console.log(e);
+    throw e;
   }
 }
 
@@ -21,7 +26,7 @@ export async function fetchNoteById(id) {
     const res = await fetch(`${BASE_URL}/notes/${id}`, {
       headers: {
         'Content-Type': 'application/json',
-        Authorization: AUTH_TOKEN,
+        Authorization: getToken(),
       },
     });
     return await res.json();
@@ -37,7 +42,7 @@ export async function createNote(note) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: AUTH_TOKEN,
+        Authorization: getToken(),
       },
       body: JSON.stringify({
         title: note.title,
@@ -57,7 +62,7 @@ export async function updateNoteById(note) {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: AUTH_TOKEN,
+        Authorization: getToken(),
       },
       body: JSON.stringify({
         title: note.title,
@@ -77,7 +82,7 @@ export async function deleteNoteById(id) {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: AUTH_TOKEN,
+        Authorization: getToken(),
       },
     });
     return await res.json();

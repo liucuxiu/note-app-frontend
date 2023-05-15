@@ -1,4 +1,4 @@
-import NoteItem from './NoteItem/NoteItem';
+import NoteItem from '../NoteItem/NoteItem';
 
 const SideBar = ({ notes, handleSelectNote, selectedNote }) => {
   if (notes === undefined || notes.length === 0) {
