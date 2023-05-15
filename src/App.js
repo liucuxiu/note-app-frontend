@@ -27,7 +27,7 @@ function App() {
 
   const handleSelectNote = async (note) => {
     if (Object.keys(selectedNote).length !== 0) {
-      await saveNote(selectedNote)
+      await saveNote(selectedNote);
     }
     const result = await fetch(`http://localhost:3000/notes/${note.id}`, {
       headers: {
@@ -36,7 +36,6 @@ function App() {
       }
     });
     const data = await result.json();
-    console.log('huhu', data);
     setSelectedNote(data);
   };
 
@@ -51,7 +50,7 @@ function App() {
         title: 'untitled',
         content: 'untitled'
       })
-    })
+    });
     const newNote = await res.json();
     setNotes([newNote, ...notes]);
     setSelectedNote(newNote);
@@ -66,6 +65,7 @@ function App() {
   }, [selectedNote]);
 
   const saveNote = async (note) => {
+    if (!note || Object.keys(note).length === 0) return;
     try {
       await fetch(`http://localhost:3000/notes/${note.id}`, {
         method: 'PATCH',
@@ -91,15 +91,29 @@ function App() {
       }
       return note;
     });
-    console.log(updatedNotesArr);
     setSelectedNote(updatedNote);
     setNotes(updatedNotesArr);
   };
 
+  const onDeleteNote = async () => {
+    if (!selectedNote || Object.keys(selectedNote).length === 0) return;
+    await fetch(`http://localhost:3000/notes/${selectedNote.id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': auth.token
+      }
+    });
+    const newNotesArr = notes.filter((note) => note.id !== selectedNote.id);
+    setNotes(newNotesArr);
+    setSelectedNote(newNotesArr[0]);
+  };
 
   return (
     <>
-      <HeaderLeft/>
+      <HeaderLeft
+        onDeleteNote={onDeleteNote}
+      />
       <SideBar
         notes={notes}
         handleSelectNote={handleSelectNote}

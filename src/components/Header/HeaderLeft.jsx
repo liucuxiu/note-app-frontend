@@ -1,12 +1,12 @@
-import { BsTrash3 } from "react-icons/bs";
+import { BsTrash3 } from 'react-icons/bs';
 
-const HeaderLeft = () => {
+const HeaderLeft = ({ onDeleteNote }) => {
 
   return (
     <div className="header-left">
-      <BsTrash3/>
+      <BsTrash3 onClick={onDeleteNote}/>
     </div>
-  )
-}
+  );
+};
 
-export default HeaderLeft
+export default HeaderLeft;
