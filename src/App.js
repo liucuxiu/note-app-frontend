@@ -10,6 +10,7 @@ import { fetchNoteById } from './services/NoteAPI';
 function App() {
   const [notes, setNotes] = useState([]);
   const [selectedNote, setSelectedNote] = useState({});
+  const [isSaving, setIsSaving] = useState(false);
 
   useEffect(() => {
     fetchNotes().then(() => {
@@ -54,8 +55,11 @@ function App() {
   };
 
   const saveNote = async (note) => {
-    if (!note || Object.keys(note).length === 0) return;
+    if (!note || Object.keys(note).length === 0 || !isSaving) return;
+
     await NoteAPI.updateNoteById(note);
+
+    setIsSaving(false);
   };
 
   const onUpdateNote = async (updatedNote) => {
@@ -92,6 +96,7 @@ function App() {
         onAddNote={onAddNote}
         selectedNote={selectedNote}/>
       <Content
+        onSave={setIsSaving}
         selectedNote={selectedNote}
         onUpdateNote={onUpdateNote}/>
     </>

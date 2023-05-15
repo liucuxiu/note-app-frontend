@@ -1,18 +1,20 @@
 import { formatDate } from '../../utils/formateDate';
 import { useState } from 'react';
 
-const Content = ({ selectedNote, onUpdateNote }) => {
+const Content = ({ selectedNote, onUpdateNote, onSave }) => {
   const [createdTimeShow, setCreatedTimeShow] = useState(false);
   const handleChangeTime = () => {
     setCreatedTimeShow(!createdTimeShow);
   };
 
   const onEditField = (field, value) => {
+    onSave(true);
     onUpdateNote({
       ...selectedNote,
       [field]: value
     });
   };
+
   if (!selectedNote || Object.keys(selectedNote).length === 0) {
     return <div className="content"/>;
   }
