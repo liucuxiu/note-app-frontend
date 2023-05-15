@@ -17,11 +17,16 @@ const Content = ({ selectedNote, onUpdateNote }) => {
           <small>{selectedNote.updatedAt}</small>
         </div>
         <div className="app-main-note-edit">
+          <input
+                 id="title"
+                 name="title"
+                 value={selectedNote.title}
+                 onChange={(e) => onEditField('title', e.target.value)}/>
           <textarea
-            id="content"
-            name="content"
-            value={selectedNote.content}
-            onChange={(e) => onEditField('content', e.target.value)}/>
+                 id="content"
+                 name="content"
+                 value={selectedNote.content}
+                 onChange={(e) => onEditField('content', e.target.value)}/>
         </div>
 
       </main>

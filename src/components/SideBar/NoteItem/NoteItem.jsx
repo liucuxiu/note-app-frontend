@@ -2,7 +2,7 @@ const NoteItem = ({ note , selectedNote, handleSelectNote}) => {
   return (
       <div
         onClick={() => handleSelectNote(note)}
-        className={`app-sidebar-note ${note === selectedNote && "active"}`}>
+        className={`app-sidebar-note ${note.id === selectedNote.id && "active"}`}>
         <h3>{note.title}</h3>
 
         <p>{note.content}</p>

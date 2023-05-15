@@ -1,0 +1,5 @@
+module.exports = {
+  auth: {
+    token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImxpdWN1eGl1MUBnbWFpbC5jb20iLCJ1c2VybmFtZSI6ImxpdWN1eGl1MSIsInVzZXJJZCI6ImY4Yzk4ZWJkLTA1NzQtNDJmMS05Y2E0LWYzMjAzNDc1YzgxYiIsImlzRW1haWxWZXJpZmllZCI6ZmFsc2UsImlhdCI6MTY4NDEyMDg4MiwiZXhwIjoxNjg0NDIwODgyfQ.lPMPR4sEad7_eUY72EJ_JNqcxCfYALLmTicRid3wAqQ'
+  }
+}
