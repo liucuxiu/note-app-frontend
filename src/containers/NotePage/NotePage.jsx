@@ -48,7 +48,7 @@ const NotePage = () => {
   };
 
   const onAddNote = async () => {
-    if (Object.keys(selectedNote).length !== 0) {
+    if (selectedNote && Object.keys(selectedNote).length !== 0) {
       await saveNote(selectedNote);
     }
 
