@@ -6,10 +6,11 @@
 
 ## Main structure of project (src folder)
 
-- `components`: contains all components.
-- `utils`: contains helper functions.
-- `services`: contains all functions for http request.
 - `App.js`: main file to run project.
+- `containers`: contains all pages of application.
+- `components`: contains all components.
+- `services`: contains all functions for http request.
+- `utils`: contains helper functions.
 
 ## Setup and Development
 
