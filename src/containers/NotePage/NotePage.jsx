@@ -39,6 +39,7 @@ const NotePage = () => {
   };
 
   const handleSelectNote = async (note) => {
+    setIsSaving(true)
     if (Object.keys(selectedNote).length !== 0) {
       await saveNote(selectedNote);
     }
@@ -47,6 +48,10 @@ const NotePage = () => {
   };
 
   const onAddNote = async () => {
+    if (Object.keys(selectedNote).length !== 0) {
+      await saveNote(selectedNote);
+    }
+
     const newNote = await NoteAPI.createNote({
       title: 'untitled',
       content: 'untitled'
