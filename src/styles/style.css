@@ -161,7 +161,7 @@ textarea {
 }
 
 .login-form {
-    max-width: 400px;
+    width: 400px;
     margin: 0 auto;
     background-color: #f5f5f5;
     padding: 20px;
@@ -207,4 +207,14 @@ textarea {
     color: red;
     font-size: 12px;
     margin-top: 5px;
+}
+
+.signup-login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.box {
+    width: 50%;
 }

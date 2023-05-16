@@ -15,3 +15,19 @@ export async function loginUser(credentials) {
     console.log(e);
   }
 }
+
+export async function registerUser(credentials) {
+  try {
+    const res = await fetch(`${BASE_URL}/user/signup`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(credentials),
+    });
+    return await res.json();
+  }
+  catch (e) {
+    console.log(e);
+  }
+}

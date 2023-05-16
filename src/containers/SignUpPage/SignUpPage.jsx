@@ -1,32 +1,32 @@
 import { useState } from 'react';
-import { loginUser } from '../../services/UserAPI';
+import { registerUser } from '../../services/UserAPI';
 
-const LoginPage = ({ setToken }) => {
+const SignUpPage = () => {
   const [username, setUserName] = useState();
   const [password, setPassword] = useState();
+  const [email, setEmail] = useState();
 
   const handleSubmit = async e => {
     e.preventDefault();
-    const result = await loginUser({
+    const result = await registerUser({
       username,
+      email,
       password
     });
-    if (result.accessToken === undefined) {
-      alert(result.message);
-      return;
-    }
-    setToken({
-      token: result.accessToken
-    });
+    console.log(result)
   }
 
   return (
     <div className="login-form">
-      <h1>Log In</h1>
+      <h1>Sign Up</h1>
       <form onSubmit={handleSubmit}>
         <label>
           <p>Username</p>
           <input type="text" onChange={e => setUserName(e.target.value)}/>
+        </label>
+        <label>
+          <p>Email</p>
+          <input type="text" onChange={e => setEmail(e.target.value)}/>
         </label>
         <label>
           <p>Password</p>
@@ -42,4 +42,4 @@ const LoginPage = ({ setToken }) => {
   );
 };
 
-export default LoginPage;
+export default SignUpPage;
